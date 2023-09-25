@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use('/api', cors(corsOption), routes);
 
 app.get('/', (req, res) => {
-    res.send('Deploy successfully');
+    res.send('Deploy successfully!');
 });
 
 app.listen(port, function () {

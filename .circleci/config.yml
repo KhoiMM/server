@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run:
           name: Install API Dependencies
-          command: npm run install
+          command: npm install
       # TODO: Build the backend API      
       - run:
           name: API Build

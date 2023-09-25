@@ -4,25 +4,25 @@ import routes from './routes/index';
 import cors from 'cors';
 
 const app: express.Application = express();
-const address: string = "localhost:4200";
+// const address: string = "localhost:4200";
 let port = 3000;
 
-const corsOption = {
-    origin: `http://${address}`,
-    optionsSuccessStatus: 200
-};
+// const corsOption = {
+//     origin: `http://${address}`,
+//     optionsSuccessStatus: 200
+// };
 
-app.use(cors(corsOption));
+// app.use(cors(corsOption));
 app.use(bodyParser.json());
 
-app.use('/api', cors(corsOption), routes);
+app.use('/api', routes);
 
-app.get('/', (req, res) => {
-    res.send('Deploy successfully!');
+app.get("/", async (req, res) => {
+    res.send('Deployed successfully');
 });
 
 app.listen(port, function () {
-    console.log(`starting app on: ${address}`)
+    console.log(`Backend server is listening on port ${port}....`);
 });
 
 export default app;

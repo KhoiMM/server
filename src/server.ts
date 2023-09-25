@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 app.use('/api', cors(corsOption), routes);
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Deploy successfully');
 });
 

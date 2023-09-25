@@ -15,7 +15,7 @@
     "clean": "rmdir /s /q www 2> nul || echo The directory does not exist",
     "tsc": "npx tsc",
     "build": "npm run clean && tsc && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "deploy": "eb list && eb use server-env && eb deploy"
+    "deploy": "eb list && eb use server-environment && eb deploy"
   },
   "author": "Udacity",
   "license": "ISC",

@@ -5,7 +5,7 @@ import cors from 'cors';
 
 const app: express.Application = express();
 // const address: string = "localhost:4200";
-let port = 3000;
+let port = 8080;
 
 // const corsOption = {
 //     origin: `http://${address}`,

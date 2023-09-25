@@ -1,5 +1,5 @@
 import client from "../database";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 
 export type User = {

@@ -4,7 +4,7 @@ import routes from './routes/index';
 import cors from 'cors';
 
 const app: express.Application = express();
-// const address: string = "localhost:4200";
+// const address: string = "bucket-khoimm.s3-website-us-east-1.amazonaws.com";
 let port = 8080;
 
 // const corsOption = {
@@ -12,8 +12,22 @@ let port = 8080;
 //     optionsSuccessStatus: 200
 // };
 
-// app.use(cors(corsOption));
 app.use(bodyParser.json());
+
+app.use(cors({
+    "allowedHeaders": [
+      'Origin', 'X-Requested-With',
+      'Content-Type', 'Accept',
+      'X-Access-Token', 'Authorization', 'Access-Control-Allow-Origin',
+      'Access-Control-Allow-Headers',
+      'Access-Control-Allow-Methods'
+    ],
+    "methods": 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    "preflightContinue": true,
+    "origin": '*',
+  }));
+
+// app.use(cors(corsOption));
 
 app.use('/api', routes);
 
